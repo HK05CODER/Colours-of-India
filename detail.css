@@ -1,0 +1,117 @@
+/* General */
+body {
+  font-family: Garamond, serif;
+  background-color: #fcfcfc;
+  color: #1b2775;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+nav {
+  background-color: #297d39;
+  color: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+nav a.back {
+  color: #fcfcfc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a.back:hover {
+  color: #e07231;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Hero Image */
+.hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* 360° Viewer */
+.viewer-section {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 2px solid #297d39;
+  border-radius: 12px;
+  background: linear-gradient(to bottom right, #fcfcfc, #f9f9f9);
+  width: 90%;
+  max-width: 600px;
+}
+
+#viewer-container {
+  width: 100%;
+  cursor: grab;
+}
+
+#viewer-container:active {
+  cursor: grabbing;
+}
+
+#craft-360 {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Craft Content */
+.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #e07231;
+  text-decoration: underline;
+  margin-top: 1.5rem;
+}
+
+/* Registration Buttons */
+.registration-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fcfcfc;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.user-btn {
+  background-color: #297d39;
+}
+
+.user-btn:hover {
+  background-color: #1b2775;
+  transform: scale(1.05);
+}
+
+.craft-btn {
+  background-color: #e07231;
+}
+
+.craft-btn:hover {
+  background-color: #1b2775;
+  transform: scale(1.05);
+}

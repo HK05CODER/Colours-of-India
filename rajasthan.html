@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajasthan – Blue Pottery</title>
+  <!-- Make sure the path to detail.css is correct -->
+  <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="back">← Back</a>
+    <h1>Rajasthan – Blue Pottery</h1>
+  </nav>
+
+  <main>
+    <!-- Hero Image -->
+    <img src="images/blue_pottery.jpg" alt="Blue Pottery" class="hero-img">
+
+    <!-- 360° Viewer -->
+    <section class="viewer-section">
+      <h2>360° View of Blue Pottery</h2>
+      <div id="viewer-container">
+        <img id="craft-360" src="images/blue_pottery_1.jpg" alt="360 view">
+      </div>
+      <p>Drag left or right to rotate the pottery.</p>
+    </section>
+
+    <!-- Craft Details -->
+    <section class="content">
+      <h2>About the Craft</h2>
+      <p>The Blue Pottery of Jaipur is celebrated for its striking cobalt-blue designs inspired by Persian art...</p>
+
+      <h2>Origin and Evolution</h2>
+      <p>Introduced to Jaipur in the 14th century under royal patronage...</p>
+
+      <h2>Present Day</h2>
+      <p>Today, this craft thrives in Jaipur’s small workshops...</p>
+
+      <!-- Registration Buttons -->
+      <div class="registration-buttons">
+        <a href="user_registration.html" class="btn user-btn">Register as User</a>
+        <a href="craftsperson_registration.html" class="btn craft-btn">Register as Craftsperson</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 360° Viewer Script -->
+  <script>
+    const totalFrames = 36; // number of images for 360° rotation
+    let currentFrame = 1;
+    const craft360 = document.getElementById('craft-360');
+    let dragging = false;
+    let startX;
+
+    function updateImage(frame) {
+      craft360.src = `images/blue_pottery_${frame}.jpg`;
+    }
+
+    craft360.addEventListener('mousedown', e => {
+      dragging = true;
+      startX = e.pageX;
+    });
+
+    window.addEventListener('mouseup', () => dragging = false);
+
+    window.addEventListener('mousemove', e => {
+      if(!dragging) return;
+      let delta = e.pageX - startX;
+      if(Math.abs(delta) > 5) {
+        if(delta > 0) {
+          currentFrame = currentFrame > 1 ? currentFrame - 1 : totalFrames;
+        } else {
+          currentFrame = currentFrame < totalFrames ? currentFrame + 1 : 1;
+        }
+        updateImage(currentFrame);
+        startX = e.pageX;
+      }
+    });
+  </script>
+
+</body>
+</html>

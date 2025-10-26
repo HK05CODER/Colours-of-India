@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crafts & Heritage of India</title>
+  <link rel="stylesheet" href="index_style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <h1>Viksit Bharat: Crafts & Heritage</h1>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay">
+      <h2>Discover India’s Timeless Heritage</h2>
+      <p>Every craft tells a story — celebrate the artistry of our villages and states.</p>
+    </div>
+  </header>
+
+  <!-- Grid of States -->
+  <main>
+    <section class="grid-section">
+      <h2>Explore the Crafts of India</h2>
+      <div class="state-grid">
+        <div class="state-card animate">
+          <a href="rajasthan.html">
+            <img src="images/rajasthan.jpg" alt="Rajasthan Craft">
+            <h3>Rajasthan – Blue Pottery</h3>
+            <p>Delicate quartz-based pottery painted in royal cobalt blues.</p>
+          </a>
+        </div>
+        <div class="state-card animate">
+          <a href="gujarat.html">
+            <img src="images/gujarat.jpg" alt="Gujarat Craft">
+            <h3>Gujarat – Patola Silk</h3>
+            <p>Intricate double-ikat silk weaving from Patan, a symbol of precision.</p>
+          </a>
+        </div>
+        <div class="state-card animate">
+          <a href="tamil_nadu.html">
+            <img src="images/tamil_nadu.jpg" alt="Tamil Nadu Craft">
+            <h3>Tamil Nadu – Tanjore Paintings</h3>
+            <p>Rich gold-leaf art that brings deities to life with divine radiance.</p>
+          </a>
+        </div>
+        <div class="state-card animate">
+          <a href="west_bengal.html">
+            <img src="images/west_bengal.jpg" alt="West Bengal Craft">
+            <h3>West Bengal – Terracotta of Bishnupur</h3>
+            <p>Earthy sculptures carved with stories of faith and folklore.</p>
+          </a>
+        </div>
+        <div class="state-card animate">
+          <a href="punjab.html">
+            <img src="images/punjab.jpg" alt="Punjab Craft">
+            <h3>Punjab – Phulkari Embroidery</h3>
+            <p>Vibrant threadwork celebrating color, community, and womanhood.</p>
+          </a>
+        </div>
+        <div class="state-card animate">
+          <a href="odisha.html">
+            <img src="images/odisha.jpg" alt="Odisha Craft">
+            <h3>Odisha – Pattachitra Painting</h3>
+            <p>Traditional scroll art depicting divine tales in bold lines and hues.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crafts in Focus Gallery -->
+    <section class="gallery-section">
+      <h2>Crafts in Focus</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card animate">
+          <img src="images/blue_pottery_close.jpg" alt="Blue Pottery Detail">
+          <p>Intricate Blue Pottery motifs from Jaipur.</p>
+        </div>
+        <div class="gallery-card animate">
+          <img src="images/patola_silk_close.jpg" alt="Patola Silk">
+          <p>Double-ikat weaving from Gujarat showing precision and color.</p>
+        </div>
+        <div class="gallery-card animate">
+          <img src="images/tanjore_painting_close.jpg" alt="Tanjore Painting">
+          <p>Gold-leaf detail in Tanjore painting from Tamil Nadu.</p>
+        </div>
+        <div class="gallery-card animate">
+          <img src="images/terracotta_bishnupur.jpg" alt="Terracotta Sculpture">
+          <p>Terracotta sculpture depicting folklore from West Bengal.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Viksit Bharat Abhiyan | Created By AKSIPS Students/<p>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const cards = document.querySelectorAll('.animate');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('fadeInUp');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
